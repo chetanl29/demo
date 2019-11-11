@@ -1,1 +1,2 @@
-delete for branch
+delete for branch 
+check for merging and switching branch..................
