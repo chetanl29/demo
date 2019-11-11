@@ -1,2 +1,3 @@
-delete for branch 
+delete from branch 
 check for merging and switching branch..................
+i have modified once agian on 11-11-2019.....................****
