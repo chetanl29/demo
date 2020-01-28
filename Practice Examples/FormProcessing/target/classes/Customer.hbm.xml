@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.test.model.Customer" table="CUSTOMER">
+		<id name="customerId" column="CUSTOMER_ID" type="java.lang.Integer">
+			<generator class="sequence">
+				<param name="CUSTOMER_NAME"></param>
+			</generator>
+		</id>
+	<property name="customerName" column="CUSTOMER_NAME" not-null="true" length="20" type="java.lang.String"></property>
+	<property name="customerState" column="CUSTOMER_STATE" not-null="true" length="20" type="java.lang.String"></property>
+	</class>
+</hibernate-mapping>
