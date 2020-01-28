@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CalServiceService" targetNamespace="http://test.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://test.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://test.com/" schemaLocation="calservice_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="addResponse">
+    <wsdl:part name="parameters" element="tns:addResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sub">
+    <wsdl:part name="parameters" element="tns:sub">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subResponse">
+    <wsdl:part name="parameters" element="tns:subResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="add">
+    <wsdl:part name="parameters" element="tns:add">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CalService">
+    <wsdl:operation name="sub">
+      <wsdl:input name="sub" message="tns:sub">
+    </wsdl:input>
+      <wsdl:output name="subResponse" message="tns:subResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add">
+      <wsdl:input name="add" message="tns:add">
+    </wsdl:input>
+      <wsdl:output name="addResponse" message="tns:addResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalServiceServiceSoapBinding" type="tns:CalService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sub">
+      <soap:operation soapAction="urn:Sub" style="document"/>
+      <wsdl:input name="sub">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="subResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="urn:Add" style="document"/>
+      <wsdl:input name="add">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalServiceService">
+    <wsdl:port name="CalServicePort" binding="tns:CalServiceServiceSoapBinding">
+      <soap:address location="http://localhost:8567/05-CalServiceApacheCXF/services/CalServicePort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
