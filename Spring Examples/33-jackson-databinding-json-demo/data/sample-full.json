@@ -1,0 +1,15 @@
+{
+	"id": 14,
+	"firstName": "Chetan",
+	"lastName": "L",
+	"active": true,
+	"address": {
+		"street": "100 Main St",
+		"city": "Bangalore",
+		"state": "Karnataka",
+		"zip": "560079",
+		"country": "India"
+	},
+	"languages" : ["Java", "C#", "Python", "Javascript"],
+	"company" : "Test Company" 
+}
